@@ -1,0 +1,21 @@
+{
+    "name": "mattivdweem/racoon",
+    "description": "Fast, component based php framework",
+    "type": "Library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matti van de Weem",
+            "email": "mvdweem@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    }
+}
