@@ -10,6 +10,8 @@ $app        = new \App\System\App();
 $runtime    = new \App\System\Runtime\NodeList();
 $router     = new \App\System\Router();
 
+$router->setMultiRoute($settings['app']['multiRoute']); // default on false
+
 /**
  * move this to a config file
  */

@@ -15,7 +15,8 @@ class Authentication extends Stump implements MiddlewareInterface{
     }
 
     public function call($req, $res, $done){
-        return $done(true, []);
+
+        return $done(false, []);
     }
 
 }

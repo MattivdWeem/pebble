@@ -6,6 +6,8 @@ class Router{
 
     private $params;
     private $runTime = [];
+    private $multiRoute = false;
+    private $done = false;
 
     /**
      *
@@ -44,6 +46,11 @@ class Router{
      */
     private function route($type, $request, $middleware, $callback){
 
+        if (!$this->isMultiRoute() && $this->isDone()) {
+            return false;
+        }
+
+
         if (!$this->checkMethod($type)){
             return false;
         }
@@ -65,6 +72,7 @@ class Router{
         $runtime = $this->getRunTime();
         $runtime[] = [$this,'handleCallback',[$callback,$middlewareResult,$params]];
         $this->setRunTime($runtime);
+        $this->setDone(true);
         return true;
 
     }
@@ -266,6 +274,38 @@ class Router{
     public function setRunTime($runTime)
     {
         $this->runTime = $runTime;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isMultiRoute()
+    {
+        return $this->multiRoute;
+    }
+
+    /**
+     * @param boolean $multiRoute
+     */
+    public function setMultiRoute($multiRoute)
+    {
+        $this->multiRoute = $multiRoute;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isDone()
+    {
+        return $this->done;
+    }
+
+    /**
+     * @param boolean $done
+     */
+    public function setDone($done)
+    {
+        $this->done = $done;
     }
 
 

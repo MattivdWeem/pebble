@@ -45,3 +45,10 @@ function arrayClean(array $array)
     }
     return $array;
 }
+
+
+function plannedExit($message){
+    // log $exit here
+    $message;
+    exit;
+}
