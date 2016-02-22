@@ -1,10 +1,10 @@
 <?php
-//$router->get('/hello',[], 'Home:display');
-$router->get('/hello',[], 'Home:displayAnother');
+$router->get('/intro/:name',[], 'Home:display');
+//$router->get('/hello',[], 'Home:displayAnother');
 
 
 $router->get(
-    '/hello/:name',
+    '/../:name',
     [
         new \App\Middleware\Authentication()
     ],
@@ -13,6 +13,8 @@ $router->get(
         return 'hi, '.$par['name'].'<br />Welcome to Racoon';
     }
 );
+
+$router->get('/:page',[], 'Home:pageNotFound');
 
 
 

@@ -1,0 +1,21 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+body{
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    background:url('http://bossfight.co/wp-content/uploads/2016/02/boss-fight-free-high-quality-stock-images-photos-photography-radio-city-people.jpg');
+    background-size:cover;
+}
+
+h1 {
+    margin-top:calc(50%/16*9 - 100px);
+    font-weight:200;
+}
+
+h2 {
+    font-weight:100;
+}
+

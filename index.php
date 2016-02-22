@@ -19,6 +19,15 @@ $settings = [
     'vendor' => [
         'directory' => __DIR__.'/vendor/',
         'loader' => 'autoload.php'
+    ],
+
+    'helpers' => [
+        'template' => [
+            'path' => 'League\Plates\Engine',
+            'arguments' =>[
+                    __DIR__.'/public/views/'
+                ]
+            ]
     ]
 
 ];

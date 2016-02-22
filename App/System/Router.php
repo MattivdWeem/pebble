@@ -101,7 +101,8 @@ class Router{
 
         $class = '\App\Controllers\\'.$call[0].'Controller';
         $cl = new $class();
-        return $cl->$call[1]($middlewareResult[0],$middlewareResult[1],array_merge([$middlewareResult[2]],$params));
+        $method = (String) $call[1];
+        return $cl->$method($middlewareResult[0],$middlewareResult[1],array_merge([$middlewareResult[2]],$params));
 
     }
 

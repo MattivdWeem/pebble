@@ -14,8 +14,9 @@ class App {
 
         foreach((array) $this->getRuntime()->getNodeList()[0] as $node){
             foreach($node as $content){
+                $method = (String) $content[1];
                 $this->render(
-                    $content[0]->$content[1]($content[2][0],$content[2][1],$content[2][2])
+                    $content[0]->$method($content[2][0],$content[2][1],$content[2][2])
                 );
             }
         }
@@ -42,7 +43,8 @@ class App {
     }
 
     public function render($content){
-        echo $content;
+        if (is_array($content)) {print_r($content); return;}
+        if (is_string($content)) {echo urldecode($content); return;}
     }
 
 
