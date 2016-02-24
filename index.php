@@ -46,7 +46,14 @@ $settings = [
         'http' => [
             'path' => 'App\Helpers\HttpHelper',
             'arguments' => []
+        ],
+        'logger' => [
+            'path' => 'App\Helpers\Logger',
+            'arguments' => [
+                __DIR__.'/log.txt'
+            ]
         ]
+
     ]
 
 ];

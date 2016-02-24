@@ -7,7 +7,12 @@ $router->get('/intro/:name',[], 'Home:display');
 $router->get('/hello',[], 'Home:displayAnother');
 
 // keep it clean, keep it simple redirecting to no page is no input
-$router->get('',[],function($req,$res,$par){return Helpers::instance('http')->redirect('/intro/'.$_SERVER['REMOTE_ADDR']);});
+$router->get('',[],function($req,$res,$par){
+    Helpers::instance('logger')->log('User tried to open main path');
+    Helpers::instance('logger')->error('User tried to open main path');
+    Helpers::instance('logger')->debug('User tried to open main path');
+    Helpers::instance('logger')->warning('User tried to open main path');
+    return Helpers::instance('http')->redirect('/intro/'.$_SERVER['REMOTE_ADDR']);});
 
 // This route is checked but will be ignored since the authentication middle ware will always return false
 $router->get(
